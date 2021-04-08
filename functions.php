@@ -34,6 +34,7 @@ foreach ( $understrap_includes as $file ) {
 	require_once $filepath;
 }
 
+//http://knowledge.ibonia.com/wordpress_plugins_default_wpmailsmtplite.html
 // YYYY-MM-DD. %NomDeveloppeur%. Filtre pour WP Mail SMPT pour lui demander
 // de ne pas faire de verification SSL (en attendant parametrage correct serveur de mail).
 
