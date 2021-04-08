@@ -33,3 +33,17 @@ foreach ( $understrap_includes as $file ) {
 	}
 	require_once $filepath;
 }
+
+// YYYY-MM-DD. %NomDeveloppeur%. Filtre pour WP Mail SMPT pour lui demander
+// de ne pas faire de verification SSL (en attendant parametrage correct serveur de mail).
+
+add_filter('wp_mail_smtp_custom_options', function($phpmailer) {
+    $phpmailer->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );
+    return $phpmailer;
+});
